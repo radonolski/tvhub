@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meine Startseite</title>
     <style>
-        /* Dunkles Apple-Design (Dark Mode) */
+        /* Dunkles, minimalistisches Design */
         :root {
-            --bg-color: #000000;       /* Tiefschwarz für den Hintergrund */
-            --card-bg: #1c1c1e;        /* Dunkelgrau für Kacheln ohne Bild (Apple Standard) */
-            --text-color: #f5f5f7;     /* Nahezu weißer Text */
-            --text-secondary: #a1a1a6; /* Grauer Sekundärtext */
+            --bg-color: #000000;       /* Hintergrund der Website (Tiefschwarz) */
+            --card-bg-default: #1c1c1e;/* Standard-Dunkelgrau, falls keine Farbe definiert ist */
+            --text-color: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.6);
         }
 
         body {
@@ -35,50 +35,43 @@
             width: 100%;
         }
 
-        /* Das Kachel-Design (Apple TV Optik) */
+        /* Das Kachel-Design */
         .card {
-            background-color: var(--card-bg);
+            background-color: var(--card-bg-default);
             border-radius: 24px;
             text-decoration: none;
-            color: #ffffff !important; /* Text auf Bildern immer weiß */
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            color: var(--text-color);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
             transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
             display: flex;
             flex-direction: column;
-            justify-content: flex-end; /* Text wandert nach unten, wie bei Apple TV */
-            align-items: flex-start;
+            justify-content: center;
+            align-items: center;
             aspect-ratio: 16 / 9;
-            padding: 24px;
+            padding: 20px;
+            text-align: center;
             box-sizing: border-box;
             cursor: pointer;
-            
-            /* Ermöglicht Hintergrundbilder */
-            background-size: cover;
-            background-position: center;
-            position: relative;
-            overflow: hidden;
         }
 
-        /* Der Hover-Effekt (Zoom, Aufhellung & starker Schatten) */
+        /* Hover-Effekt */
         .card:hover {
             transform: scale(1.05) translateY(-5px);
             box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1);
         }
 
-        /* Typografie innerhalb der Kachel (über dem Bild-Overlay) */
+        /* Typografie */
         .card h2 {
             margin: 0;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             font-weight: 600;
             letter-spacing: -0.02em;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5); /* Macht Text auf hellen Bildern lesbar */
         }
 
         .card p {
-            margin: 4px 0 0 0;
-            color: rgba(255, 255, 255, 0.7);
+            margin: 8px 0 0 0;
+            color: var(--text-secondary);
             font-size: 0.95rem;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
         }
     </style>
 </head>
@@ -86,17 +79,17 @@
 
     <div class="grid-container">
         
-        <a href="https://streamed.pk/category/football" class="card" style="background-image: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 100%), url('https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=600&q=80');">
+        <a href="https://streamed.pk/category/football" class="card" style="background-color: #6441a5;">
             <h2>Fußball</h2>
             <p>Fußball Ergebnisse & Streams</p>
         </a>
 
-        <a href="https://bcine.ru/" class="card">
+        <a href="https://bcine.ru/" class="card" style="background-color: #1f6f3e;">
             <h2>Filme und Serien (4K)</h2>
             <p>Einige Filme und Serien in 4K</p>
         </a>
 
-        <a href="https://www.cineby.at/" class="card" style="background-image: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 100%), url('https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?auto=format&fit=crop&w=600&q=80');">
+        <a href="https://www.cineby.at/" class="card" style="background-color: #0b57d0;">
             <h2>Filme uns Serien (FHD)</h2>
             <p>Einige Filme und Serien in FHD</p>
         </a>
