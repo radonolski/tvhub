@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meine Startseite</title>
+    <style>
+        /* Grundlegendes Design (Apple-inspiriert) */
+        :root {
+            --bg-color: #f5f5f7; /* Helles, gemütliches Grau */
+            --card-bg: #ffffff;
+            --text-color: #1d1d1f;
+            --text-secondary: #86868b;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Raster für die Kacheln */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        /* Das Kachel-Design (Apple TV Optik) */
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 24px;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+            transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            aspect-ratio: 16 / 9; /* Typisches TV/Monitor-Format */
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        /* Der Hover-Effekt (Zoom & Schatten) */
+        .card:hover {
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Typografie innerhalb der Kachel */
+        .card h2 {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        .card p {
+            margin-top: 8px;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="grid-container">
+        
+        <a href="https://dashboard.twitch.tv" class="card">
+            <h2>Twitch Dashboard</h2>
+            <p>Moderation & Einstellungen</p>
+        </a>
+
+        <a href="https://chrome.google.com/webstore/devconsole" class="card">
+            <h2>Chrome Web Store</h2>
+            <p>Extensions verwalten</p>
+        </a>
+
+        <a href="https://www.kicker.de" class="card">
+            <h2>Live Scores</h2>
+            <p>Fußball Ergebnisse</p>
+        </a>
+
+        <a href="https://pipedream.com" class="card">
+            <h2>Pipedream</h2>
+            <p>Automatisierungen</p>
+        </a>
+
+    </div>
+
+</body>
+</html>
